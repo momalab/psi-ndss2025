@@ -1,0 +1,31 @@
+# Directory
+path = ../data/sender
+
+# Sender's input set
+set = X_20.set
+bit_size = 32
+
+# Cuckoo hash table parameters
+table = T_20_4
+num_hashes = 4
+log_table_size = 20
+max_depth = 1024
+
+# Encryption parameters
+sender_keys = sender
+sender_logn = 12
+sender_logqi = 27,27,27,28
+sender_eta = 0
+receiver_keys = receiver
+receiver_logn = 12
+receiver_logqi = 27,27,27,28
+receiver_eta = 0
+ti = 40961
+
+# Compute parameters
+ip = none
+port_setup = 12345
+port_intersect = 12346
+rcvbuf_size = 65536
+sndbuf_size = 65536
+num_threads = 4
