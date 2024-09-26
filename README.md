@@ -29,7 +29,7 @@ Two versions of the protocol are available:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/momalab/psi.git
+   git clone https://github.com/momalab/psi-ndss2025.git
    ```
 
 2. Install Microsoft SEAL library version 4.1:
