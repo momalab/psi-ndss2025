@@ -22,7 +22,8 @@ Two versions of the protocol are available:
 
 - Linux
 - Git
-- GNU C++17 compiler
+- Cmake (>= 3.13)
+- GNU C++ compiler (>= 7.3)
 - Python 3
 
 ### Setup
