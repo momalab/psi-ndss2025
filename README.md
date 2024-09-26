@@ -34,7 +34,7 @@ Two versions of the protocol are available:
 
 2. Install Microsoft SEAL library version 4.1:
    ```bash
-   cd 3p
+   cd psi-ndss2025/3p
    bash install_seal.sh
    ```
    This script automatically clones SEAL v4.1 into `3p/clone`, compiles and tests it, and installs the library in `3p/seal`. For SEAL dependencies, refer to the [Microsoft SEAL repository](https://github.com/microsoft/SEAL).
