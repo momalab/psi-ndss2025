@@ -24,6 +24,7 @@ Two versions of the protocol are available:
 - Git
 - Cmake (>= 3.13)
 - GNU C++ compiler (>= 7.3)
+- GMP library
 - Python 3
 
 ### Setup
