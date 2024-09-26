@@ -1,6 +1,6 @@
 # Recurrent Private Set Intersection for Unbalanced Databases with Cuckoo Hashing and Leveled FHE
 
-This project implements the Private Set Intersection (PSI) protocol[$^1$](#cite-us) tailored for unbalanced sets in the recurrent setting.
+This project implements the Private Set Intersection (PSI) protocol [[1]](#cite-us) tailored for unbalanced sets in the recurrent setting.
 Two versions of the protocol are available:
 
 1. **Standalone**: A single program that executes the entire protocol, suitable for reproducing paper results.
