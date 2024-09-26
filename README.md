@@ -167,7 +167,7 @@ After execution, you will find `.intersect` files in the Receiver's directory (`
 
 ## License
 
-This project is licensed under the [GNU General Public License v3](LICENSE).
+This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Cite us
 
