@@ -173,4 +173,12 @@ This project is licensed under the [GNU General Public License v3.0](LICENSE).
 
 ## Cite us
 
-The *Recurrent Private Set Intersection for Unbalanced Databases with Cuckoo Hashing and Leveled FHE* is accepted for publication at NDSS'25.
+E. Chielle and M. Maniatakos, "Recurrent Private Set Intersection for Unbalanced Databases with Cuckoo Hashing and Leveled FHE." Network and Distributed System Security (NDSS) Symposium, 2025.
+```
+@INPROCEEDINGS{psi2025ndss,
+  author={Chielle, Eduardo and Maniatakos, Michail},
+  booktitle={Network and Distributed System Security (NDSS) Symposium},
+  title={Recurrent Private Set Intersection for Unbalanced Databases with Cuckoo Hashing and Leveled FHE},
+  year={2025}
+}
+```
