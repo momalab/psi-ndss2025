@@ -33,11 +33,11 @@ try
 {
     if (argc < 2)
     {
-        cerr << "Usage: " << argv[0] << " <mode> <log2|X|> <|Y|> <|m|> <threads>" << endl;
+        cerr << "Usage: " << argv[0] << " <mode> <log2|X|> <|Y|> <m> <threads>" << endl;
         cerr << "mode: 0 (Fast Setup), 1 (Fast Intersection)" << endl;
         cerr << "log2|X|: log2 of the size of the Sender's set (default: 20)" << endl;
         cerr << "|Y|: size of the Receiver's set (default: 4)" << endl;
-        cerr << "|m|: number of recurrencies (default: 1)" << endl;
+        cerr << "m: number of recurrencies (default: 1)" << endl;
         cerr << "threads: number of threads (default: 4)" << endl;
         return 1;
     }
