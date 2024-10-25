@@ -11,6 +11,7 @@ Two versions of the protocol are available:
 - [Installation](#installation)
   - [Requirements](#requirements)
   - [Setup](#setup)
+- [Artifact evaluation](#artifact-evaluation)
 - [Standalone](#standalone)
 - [Deployment](#deployment)
 - [License](#license)
@@ -40,6 +41,27 @@ Two versions of the protocol are available:
    bash install_seal.sh
    ```
    This script automatically clones SEAL v4.1 into `3p/clone`, compiles and tests it, and installs the library in `3p/seal`. For SEAL dependencies, refer to the [Microsoft SEAL repository](https://github.com/microsoft/SEAL).
+
+## Artifact evaluation
+
+To reproduce our results, run `reproduce.py` located in `src/main`. This script requires the `texlive-latex-base` and `texlive-latex-extra` packages to generate the PDF output.
+
+1. Install required packages:
+   ```bash
+   sudo apt install -y texlive-latex-base texlive-latex-extra
+   ```
+
+2. Navigate to the `src/main` directory:
+   ```bash
+   cd src/main
+   ```
+
+3. Execute the protocol:
+   ```bash
+   python3 reproduce.py
+   ```
+
+A PDF file named `artifact-evaluation.pdf` will be generated, containing the performance results for our protocol as shown in Tables II to VI.
 
 ## Standalone
 

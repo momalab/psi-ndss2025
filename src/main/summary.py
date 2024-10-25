@@ -15,7 +15,7 @@ def main():
     # read 'm' from arguments
     if len(sys.argv) != 2:
         print("Usage: python summary.py <m>")
-        return
+        exit(1)
     m = int(sys.argv[1]) # 'm' accounts for the number of recurrencies
 
     directory = '.'
@@ -47,12 +47,12 @@ def main():
     # load sender and receiver runtime from file 'runtime.log'
     with open('runtime.log', 'r') as f:
         lines = f.readlines()
-        sender_runtime_pre = float(lines[0].strip()) / 1000 # conversion to seconds
+        sender_runtime_pre = float(lines[0].strip()) / 1000 / m # conversion to seconds
         sender_runtime = float(lines[1].strip()) / 1000 / m # conversion to seconds
         receiver_runtime = float(lines[2].strip()) / 1000 / m # conversion to seconds
 
     # to MiB
-    from_sender_pre /= 1<<20
+    from_sender_pre /= (1<<20) * m
     from_sender /= (1<<20) * m
     from_receiver /= (1<<20) * m
     total = from_sender + from_receiver
@@ -66,11 +66,16 @@ def main():
     bandwidth_100 = 10**2 / 8
 
     # communication time in seconds for 10 Gbps and 100 Mbps networks
-    tcp_overhead = 1.04 # around 4% overhead for TCP
-    communication_time_pre_10G = tcp_overhead * from_sender_pre / bandwidth_10G + 2 * rtt_10G
-    communication_time_pre_100 = tcp_overhead * from_sender_pre / bandwidth_100 + 2 * rtt_100
-    communication_time_10G = tcp_overhead * total / bandwidth_10G + 2 * rtt_10G
-    communication_time_100 = tcp_overhead * total / bandwidth_100 + 2 * rtt_100
+    communication_time_sender_pre_10G = from_sender_pre / bandwidth_10G
+    communication_time_sender_pre_100 = from_sender_pre / bandwidth_100
+    communication_time_pre_10G = communication_time_sender_pre_10G + rtt_10G / m
+    communication_time_pre_100 = communication_time_sender_pre_100 + rtt_100 / m
+    communication_time_sender_10G = from_sender / bandwidth_10G + rtt_10G / m
+    communication_time_sender_100 = from_sender / bandwidth_100 + rtt_100 / m
+    communication_time_receiver_10G = from_receiver / bandwidth_10G + rtt_10G / m
+    communication_time_receiver_100 = from_receiver / bandwidth_100 + rtt_100 / m
+    communication_time_10G = communication_time_sender_10G + communication_time_receiver_10G
+    communication_time_100 = communication_time_sender_100 + communication_time_receiver_100
 
     # Show results
 
@@ -89,14 +94,14 @@ def main():
     print('-----------------------------------')
     print(f'Communication time for 10 Gbps network (s)') # Assuming RTT = 0.2ms
     print(f'From     One-time Recurrent')
-    print(f'Sender   {communication_time_pre_10G: 8.2f}  {communication_time_10G:8.2f}')
-    print(f'Receiver     0.00  {communication_time_10G:8.2f}')
+    print(f'Sender   {communication_time_sender_pre_10G: 8.2f}  {communication_time_sender_10G:8.2f}')
+    print(f'Receiver     0.00  {communication_time_receiver_10G:8.2f}')
     print(f'Total    {communication_time_pre_10G: 8.2f}  {communication_time_10G:8.2f}')
     print('-----------------------------------')
     print(f'Communication time for 100 Mbps network (s)') # Assuming RTT = 80ms
     print(f'From     One-time Recurrent')
-    print(f'Sender   {communication_time_pre_100: 8.2f}  {communication_time_100:8.2f}')
-    print(f'Receiver     0.00  {communication_time_100:8.2f}')
+    print(f'Sender   {communication_time_sender_pre_100: 8.2f}  {communication_time_sender_100:8.2f}')
+    print(f'Receiver     0.00  {communication_time_receiver_100:8.2f}')
     print(f'Total    {communication_time_pre_100: 8.2f}  {communication_time_100:8.2f}')
     print('-----------------------------------')
     print(f'Total time for 10 Gbps network (s)')

@@ -29,6 +29,7 @@ all: info
 	$(CC) $(INCS) $(FLAGS) -o $@.exe $< $(CPPS) $(LIBS) $(DEFS)
 
 clean:
+	rm -f *.aux
 	rm -f *.log
 	rm -f *.tmp
 	rm -f $(DATA)/sender/*.ct
