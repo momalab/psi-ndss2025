@@ -44,11 +44,11 @@ Two versions of the protocol are available:
 
 ## Artifact evaluation
 
-To reproduce our results, run `reproduce.py` located in `src/main`. This script requires the `texlive-latex-base` and `texlive-latex-extra` packages to generate the PDF output.
+To reproduce our results, run `reproduce.py` located in `src/main`. This script requires the `texlive`, `texlive-latex-base`, and `texlive-latex-extra` packages to generate the PDF output.
 
 1. Install required packages:
    ```bash
-   sudo apt install -y texlive-latex-base texlive-latex-extra
+   sudo apt install -y texlive texlive-latex-base texlive-latex-extra
    ```
 
 2. Navigate to the `src/main` directory:
