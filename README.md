@@ -62,7 +62,7 @@ To reproduce our results, run `reproduce.py` located in `src/main`. This script 
    ```
 
 A PDF file named `artifact-evaluation.pdf` will be generated, containing the performance results for our protocol as shown in Tables II to VI.
-We do not include the reproduction of Fig. 2 and Table 1 in the artifact for two reasons:
+We do not include the reproduction of Fig. 2 and Table I in the artifact for two reasons:
 1) These results focus on parameter selection and have minimal impact on protocol execution time;
 2) Generating these results is extremely time-consuming.
 
