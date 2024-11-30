@@ -62,6 +62,13 @@ To reproduce our results, run `reproduce.py` located in `src/main`. This script 
    ```
 
 A PDF file named `artifact-evaluation.pdf` will be generated, containing the performance results for our protocol as shown in Tables II to VI.
+We do not include the reproduction of Fig. 2 and Table 1 in the artifact for two reasons:
+1) These results focus on parameter selection and have minimal impact on protocol execution time;
+2) Generating these results is extremely time-consuming.
+
+Given their limited impact and excessive computational cost, we decided it was impractical to include them. Nonetheless, the experimental methodology is described in the paper and aligns with related work.
+To verify the limited impact of parameter changes on execution time, one can modify the number of hash functions (`src/main/protocol.cpp`, line 72) from 4 to 3, and adjust the load factor (line 76) from `load_factor = mode ? 0.86 : 0.87` to `load_factor = mode ? 0.72 : 0.73`, then rerun the `reproduce.py` script.
+
 
 ## Standalone
 
